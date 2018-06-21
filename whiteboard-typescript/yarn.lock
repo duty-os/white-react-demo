@@ -7405,9 +7405,9 @@ which@^1.2.12, which@^1.2.14, which@^1.2.9, which@^1.3.0:
   dependencies:
     isexe "^2.0.0"
 
-white-web-sdk@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/white-web-sdk/-/white-web-sdk-1.0.2.tgz#2103298e56114fd34305e7e71514e48c0544131d"
+white-web-sdk@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/white-web-sdk/-/white-web-sdk-1.0.3.tgz#beb9bf16128fc8337e8cbaeaadb109e1d1eece07"
   dependencies:
     "@types/react" "^16.3.12"
     react "^16.3.2"
