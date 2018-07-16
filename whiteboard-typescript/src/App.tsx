@@ -23,9 +23,6 @@ export class App extends React.Component<{}, AppState> {
     }
 
     public async componentWillMount(): Promise<void> {
-        // if (new Date().getTime() > 0) {
-        //     return;
-        // }
         try {
             const uuid = await this.createRoom();
             const roomToken = await this.getRoomToken(uuid);
