@@ -22,3 +22,6 @@ white-web-sdk 还提供多种工具，如选择器、铅笔、文字、圆形工
 
 - **[我的第一个白板应用](documents/my-first-whiteboard-application.md)**
 - **[白板的工具制作与状态管理](documents/whiteboard-state.md)**
+- **[教具](documents/appliances.md)**
+- **[页面与 PPT](documents/page-and-ppt.md)**
+- **[主播模式](documents/broadcaster-mode.md)**
