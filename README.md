@@ -2,6 +2,9 @@
 
 [![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/herewhite/white-stack)
 
+- [官网](https://www.herewhite.com)
+- [官方产品](https://app.herewhite.com)
+
 ## 简介
 
 white-web-sdk 可以为你的 Web 应用提供一块实时互动白板。你的应用必须使用 React（版本在 16 或以上）来将白板引入到你的网页上。
