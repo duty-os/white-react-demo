@@ -112,9 +112,8 @@ export class App extends React.Component<{}, AppState> {
             return <div>is joining room...</div>;
         } else {
             return (
-                <div className="whiteboard-container">
-                    <RoomWhiteboard room={this.state.room}/>
-                </div>
+                <RoomWhiteboard className="app-whiteboard"
+                                room={this.state.room}/>
             );
         }
     }
