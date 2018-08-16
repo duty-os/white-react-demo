@@ -1,6 +1,6 @@
 import "./App.css";
 import * as React from "react";
-import {Room, WhiteWebSdk, RoomWhiteboard} from "white-web-sdk";
+import {Room, WhiteWebSdk, RoomWhiteboard} from "white-react-sdk";
 
 export type AppState = {
     room?: Room;
@@ -42,7 +42,7 @@ export class App extends React.Component<{}, AppState> {
 
         // POST room 方法应该由服务端调用，此处仅为了方便演示，将它写在前端代码中。
         // 实践中的做法应该是，前端向后端业务服务器申请建立房间，业务服务器鉴权通过后，使用 miniToken 调用 White 的 API。
-        const url = `https://cloudapi.herewhite.com/room?token=${App.miniToken}`;
+        const url = `https://cloudcapiv3.herewhite.com/room?token=${App.miniToken}`;
         const response = await fetch(url, {
             method: "POST",
             headers: {
@@ -77,7 +77,7 @@ export class App extends React.Component<{}, AppState> {
         // POST room/join 方法应该由服务端调用，此处仅为了方便演示，将它写在前端代码中。
         // 实践中的做法应该是，前端通过某种方法获取到房间 uuid 后，向后端业务服务器请求进入该房间。
         // 业务服务器在鉴权认为前端可以进入房间后，返回给它一个 roomToken。
-        const url = `https://cloudapi.herewhite.com/room/join?uuid=${uuid}&token=${App.miniToken}`;
+        const url = `https://cloudcapiv3.herewhite.com/room/join?uuid=${uuid}&token=${App.miniToken}`;
         const response = await fetch(url, {
             method: "POST",
             headers: {
