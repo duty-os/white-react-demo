@@ -51,8 +51,6 @@ export class App extends React.Component<{}, AppState> {
             body: JSON.stringify({
                 name: "我的第一个 White 房间",
                 limit: 100, // 房间人数限制
-                width: 1024,
-                height: 768,
             }),
         });
         if (response.status !== 200) {
