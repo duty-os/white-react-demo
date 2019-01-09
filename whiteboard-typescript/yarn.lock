@@ -8449,17 +8449,17 @@ which@^1.2.12, which@^1.2.14, which@^1.2.9, which@^1.3.0:
   dependencies:
     isexe "^2.0.0"
 
-white-react-sdk@1.3.4:
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/white-react-sdk/-/white-react-sdk-1.3.4.tgz#b395b2935eb2aa8aa3bce873bc6ca33342d93d08"
-  integrity sha512-Fxpfs+5jAexbREkdGAjNGurx2HKlkqOsIbgkK6TsQJA7Flja863bgScyjOXmnUrYVjDBJvGwDDdqmBY5g9rAIA==
+white-react-sdk@1.3.5:
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/white-react-sdk/-/white-react-sdk-1.3.5.tgz#d199069e23741246e62231eb17f8e30fab47d952"
+  integrity sha512-bekSN7hIUB2BK+uOMwVRcafh2cdD8uVFt6tMGpK9rAL1xCXMw9r2lVi00lrfTK4/Qj9Jkf7kuzhuKjCCNi0VGQ==
   dependencies:
-    white-web-sdk "1.3.4"
+    white-web-sdk "1.3.5"
 
-white-web-sdk@1.3.4:
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/white-web-sdk/-/white-web-sdk-1.3.4.tgz#a4effb4e0fdf20e8e9792b384138e66297c5a6cd"
-  integrity sha512-+nRRBQBlY7YDy2fXQ82iR67uxk2Bp7cRolPj6LMnBgvMpkXDe1g8uz2rkdntE+hPlH+Ctp31LnJ8kMAtPH5PFw==
+white-web-sdk@1.3.5:
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/white-web-sdk/-/white-web-sdk-1.3.5.tgz#c4fb2d6066b4542aacc26b537ed41349c3986d20"
+  integrity sha512-RilA+ZVVERwzmftwKECjjE+Zqj6HNIY37uds1qYLyZPmAKlMmBUKOg175cX91qTqbnC2MWJgt7WGM3/6oVq6IA==
   dependencies:
     "@types/node" "^10.3.3"
     "@types/query-string" "5"
