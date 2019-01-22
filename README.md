@@ -5,6 +5,15 @@
 - [官网](https://www.herewhite.com)
 - [官方产品](https://app.herewhite.com)
 
+## 快速启动
+
+在 `whiteboard-typescript/src/App.tsx` 将，`private static readonly miniToken = "此处填写你获取的 miniToken";` miniToken替换为从 console.herewhite.com 获取的 token。
+
+```shell
+cd whiteboard-typescript
+yarn && yarn start
+```
+
 ## 简介
 
 white-web-sdk 可以为你的 Web 应用提供一块实时互动白板。你的应用必须使用 React（版本在 16 或以上）来将白板引入到你的网页上。
