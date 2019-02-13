@@ -36,8 +36,8 @@ export class HomePage extends React.Component<{}, HomePageState> {
             this.setState({redirectToRoom: roomDescription})
 
         } catch (error) {
-            alert(error.message);
             console.error(error);
+            alert(error.message);
             this.setState({isLoading: false});
         }
     }
@@ -86,8 +86,8 @@ export class HomePage extends React.Component<{}, HomePageState> {
             this.setState({redirectToRoom: {uuid, token}})
 
         } catch (error) {
-            alert(error.message);
             console.error(error);
+            alert(error.message);
             this.setState({isLoading: false});
         }
     }
