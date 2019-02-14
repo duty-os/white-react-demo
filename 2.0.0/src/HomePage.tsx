@@ -9,6 +9,7 @@ import {Redirect} from "react-router";
 export type HomePageState = {
     readonly isLoading: boolean;
     readonly uuidValue: string;
+    readonly createdRoomMode: string;
     readonly redirectToRoom?: RoomDescription;
 };
 
@@ -24,6 +25,7 @@ export class HomePage extends React.Component<{}, HomePageState> {
         this.state = {
             isLoading: false,
             uuidValue: "",
+            createdRoomMode: "persistent",
         };
     }
 
@@ -61,6 +63,7 @@ export class HomePage extends React.Component<{}, HomePageState> {
             body: JSON.stringify({
                 name: "我的第一个 White 房间",
                 limit: 100, // 房间人数限制
+                mode: this.state.createdRoomMode,
             }),
         });
         if (response.status !== 200) {
@@ -130,6 +133,12 @@ export class HomePage extends React.Component<{}, HomePageState> {
             <div className="home-page">
                 <div className="bar">
                     <label>创建房间</label>
+                    <select value={this.state.createdRoomMode}
+                            onChange={event => this.setState({createdRoomMode: event.target.value})}>
+                        <option value="transitory">临时房间</option>
+                        <option value="persistent">持久化房间</option>
+                        <option value="historied">可回放房间</option>
+                    </select>
                     <button disabled={this.state.isLoading}
                             onClick={this.onClickCreateRoom}>
                         创建
