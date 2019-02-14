@@ -113,6 +113,7 @@ export class RoomPage extends React.Component<RoomPageProps, RoomPageState> {
             <div className="top-bar">
                 <label>房间号：{this.uuid}</label>
                 <label>房间状态：{this.currentRoomPhaseDescription()}</label>
+                <label>分片：{(this.state.room && this.state.room.slice) || "-"}</label>
                 {this.renderApplianceBar()}
             </div>
         );

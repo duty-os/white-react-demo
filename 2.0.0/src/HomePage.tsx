@@ -8,9 +8,10 @@ import {Redirect} from "react-router";
 
 export type HomePageState = {
     readonly isLoading: boolean;
-    readonly uuidValue: string;
+    readonly joinRoomUUID: string;
+    readonly replaySliceUUID: string;
     readonly createdRoomMode: string;
-    readonly redirectToRoom?: RoomDescription;
+    readonly redirectToPath?: string;
 };
 
 export type RoomDescription = {
@@ -24,7 +25,8 @@ export class HomePage extends React.Component<{}, HomePageState> {
         super(props);
         this.state = {
             isLoading: false,
-            uuidValue: "",
+            joinRoomUUID: "",
+            replaySliceUUID: "",
             createdRoomMode: "persistent",
         };
     }
@@ -32,10 +34,11 @@ export class HomePage extends React.Component<{}, HomePageState> {
     private onClickCreateRoom = async (): Promise<void> => {
         try {
             this.setState({isLoading: true});
-            const roomDescription = await this.createRoom();
+            const {uuid, token} = await this.createRoom();
+            const query = stringify({token});
 
             // 跳转到该房间
-            this.setState({redirectToRoom: roomDescription})
+            this.setState({redirectToPath: `/room/${uuid}?${query}`});
 
         } catch (error) {
             console.error(error);
@@ -82,11 +85,29 @@ export class HomePage extends React.Component<{}, HomePageState> {
     private onClickJoinRoom = async (): Promise<void> => {
         try {
             this.setState({isLoading: true});
-            const uuid = this.state.uuidValue;
+            const uuid = this.state.joinRoomUUID;
             const token = await this.getRoomToken(uuid);
+            const query = stringify({token});
 
             // 跳转到该房间
-            this.setState({redirectToRoom: {uuid, token}})
+            this.setState({redirectToPath: `/room/${uuid}?${query}`});
+
+        } catch (error) {
+            console.error(error);
+            alert(error.message);
+            this.setState({isLoading: false});
+        }
+    }
+
+    private onClickReplayRoom = async (): Promise<void> => {
+        try {
+            this.setState({isLoading: true});
+            const uuid = this.state.replaySliceUUID;
+            const token = await this.getRoomToken(uuid);
+            const query = stringify({token});
+
+            // 跳转到该房间
+            this.setState({redirectToPath: `/slice/${uuid}?${query}`});
 
         } catch (error) {
             console.error(error);
@@ -123,17 +144,15 @@ export class HomePage extends React.Component<{}, HomePageState> {
     }
 
     public render(): React.ReactNode {
-        if (this.state.redirectToRoom) {
-            const {uuid, token} = this.state.redirectToRoom;
-            const query = stringify({token});
-
-            return <Redirect to={`/room/${uuid}?${query}`}/>
+        if (this.state.redirectToPath) {
+            return <Redirect to={this.state.redirectToPath}/>
         }
         return (
             <div className="home-page">
                 <div className="bar">
                     <label>创建房间</label>
-                    <select value={this.state.createdRoomMode}
+                    <select disabled={this.state.isLoading}
+                            value={this.state.createdRoomMode}
                             onChange={event => this.setState({createdRoomMode: event.target.value})}>
                         <option value="transitory">临时房间</option>
                         <option value="persistent">持久化房间</option>
@@ -148,11 +167,22 @@ export class HomePage extends React.Component<{}, HomePageState> {
                     <label>进入房间</label>
                     <input disabled={this.state.isLoading}
                            placeholder="请输入房间 uuid"
-                           value={this.state.uuidValue}
-                           onChange={event => this.setState({uuidValue: event.target.value})}/>
-                    <button disabled={this.state.isLoading || this.state.uuidValue === ""}
+                           value={this.state.joinRoomUUID}
+                           onChange={event => this.setState({joinRoomUUID: event.target.value})}/>
+                    <button disabled={this.state.isLoading || this.state.joinRoomUUID === ""}
                             onClick={this.onClickJoinRoom}>
                         进入
+                    </button>
+                </div>
+                <div className="bar">
+                    <label>播放分片</label>
+                    <input disabled={this.state.isLoading}
+                           placeholder="请输入分片 uuid"
+                           value={this.state.replaySliceUUID}
+                           onChange={event => this.setState({replaySliceUUID: event.target.value})}/>
+                    <button disabled={this.state.isLoading || this.state.replaySliceUUID === ""}
+                            onClick={this.onClickReplayRoom}>
+                        播放
                     </button>
                 </div>
             </div>
