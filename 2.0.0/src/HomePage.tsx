@@ -103,11 +103,9 @@ export class HomePage extends React.Component<{}, HomePageState> {
         try {
             this.setState({isLoading: true});
             const uuid = this.state.replaySliceUUID;
-            const token = await this.getRoomToken(uuid);
-            const query = stringify({token});
 
             // 跳转到该房间
-            this.setState({redirectToPath: `/slice/${uuid}?${query}`});
+            this.setState({redirectToPath: `/slice/${uuid}`});
 
         } catch (error) {
             console.error(error);
