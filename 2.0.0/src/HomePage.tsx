@@ -52,7 +52,7 @@ export class HomePage extends React.Component<{}, HomePageState> {
         // POST room 方法应该由服务端调用，此处仅为了方便演示，将它写在前端代码中。
         // 实践中的做法应该是，前端向后端业务服务器申请建立房间，业务服务器鉴权通过后，使用 miniToken 调用 White 的 API。
         const query = stringify({token: getMiniToken()});
-        const url = `https://cloudcapiv3.herewhite.com/room?${query}`;
+        const url = `https://cloudcapiv4.herewhite.com/room?${query}`;
         const response = await fetch(url, {
             method: "POST",
             headers: {
@@ -105,7 +105,7 @@ export class HomePage extends React.Component<{}, HomePageState> {
         // 实践中的做法应该是，前端通过某种方法获取到房间 uuid 后，向后端业务服务器请求进入该房间。
         // 业务服务器在鉴权认为前端可以进入房间后，返回给它一个 roomToken。
         const query = stringify({uuid, token: getMiniToken()});
-        const url = `https://cloudcapiv3.herewhite.com/room/join?${query}`;
+        const url = `https://cloudcapiv4.herewhite.com/room/join?${query}`;
         const response = await fetch(url, {
             method: "POST",
             headers: {
