@@ -2,6 +2,7 @@ import "./SlicePage.css";
 
 import * as React from "react";
 
+import {parse} from "query-string";
 import {RouteComponentProps} from "react-router";
 import {WhiteWebSdk, Player, PlayerWhiteboard} from "white-react-sdk";
 import {RoomPageProps} from "./RoomPage";
@@ -17,6 +18,8 @@ export type SlicePageState = {
 export class SlicePage extends React.Component<SlicePageProps, SlicePageState> {
 
     private readonly uuid: string;
+    private readonly beginAt: number;
+    private readonly duration: number;
     private readonly whiteWebSdk: WhiteWebSdk;
 
     public constructor(props: RoomPageProps) {
@@ -26,6 +29,9 @@ export class SlicePage extends React.Component<SlicePageProps, SlicePageState> {
         this.state = {
             player: null,
         };
+        const query = parse(this.props.location.search);
+        this.beginAt = parseInt(query.beginAt);
+        this.duration = parseInt(query.duration);
     }
 
     public componentWillMount(): void {
@@ -36,7 +42,11 @@ export class SlicePage extends React.Component<SlicePageProps, SlicePageState> {
     }
 
     private async replaySlice(): Promise<void> {
-        const player = await this.whiteWebSdk.replayRoom({sliceUUID: this.uuid}, {
+        const player = await this.whiteWebSdk.replayRoom({
+            room: this.uuid,
+            beginTimestamp: this.beginAt,
+            duration: this.duration,
+        }, {
             onLoadFirstFrame: () => {},
             onScheduleTimeChanged: timestamp => {},
         });

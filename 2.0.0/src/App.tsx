@@ -12,7 +12,7 @@ export const App: React.FunctionComponent = () => (
         <Switch>
             <Route exact path="/" component={HomePage}/>
             <Route exact path="/room/:uuid" component={RoomPage}/>
-            <Route exact path="/slice/:uuid" component={SlicePage}/>
+            <Route exact path="/replay/:uuid" component={SlicePage}/>
             <Route component={NotFoundPage}/>
         </Switch>
     </BrowserRouter>
