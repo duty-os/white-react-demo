@@ -99,21 +99,6 @@ export class HomePage extends React.Component<{}, HomePageState> {
         }
     }
 
-    private onClickReplayRoom = async (): Promise<void> => {
-        try {
-            this.setState({isLoading: true});
-            const uuid = this.state.replaySliceUUID;
-
-            // 跳转到该房间
-            this.setState({redirectToPath: `/slice/${uuid}`});
-
-        } catch (error) {
-            console.error(error);
-            alert(error.message);
-            this.setState({isLoading: false});
-        }
-    }
-
     /**
      * 获取房间 token
      * 只有获取了该 token，才有权限进入房间
@@ -172,16 +157,89 @@ export class HomePage extends React.Component<{}, HomePageState> {
                         进入
                     </button>
                 </div>
-                <div className="bar">
-                    <label>播放分片</label>
-                    <input disabled={this.state.isLoading}
-                           placeholder="请输入分片 uuid"
-                           value={this.state.replaySliceUUID}
-                           onChange={event => this.setState({replaySliceUUID: event.target.value})}/>
-                    <button disabled={this.state.isLoading || this.state.replaySliceUUID === ""}
-                            onClick={this.onClickReplayRoom}>
-                        播放
-                    </button>
+                <ReplayBox isLoading={this.state.isLoading}/>
+            </div>
+        );
+    }
+}
+
+type ReplayBoxProps = {
+    readonly isLoading: boolean;
+};
+
+type ReplayBoxState = {
+    readonly roomUUID: string;
+    readonly beginAt: string;
+    readonly duration: string;
+    readonly redirectToPath?: string;
+};
+
+class ReplayBox extends React.Component<ReplayBoxProps, ReplayBoxState> {
+
+    public constructor(props: ReplayBoxProps) {
+        super(props);
+        this.state = {
+            roomUUID: "",
+            beginAt: "",
+            duration: "",
+        };
+    }
+
+    private didInputAll(): boolean {
+        return (
+            this.state.roomUUID !== "" &&
+            this.state.beginAt !== "" &&
+            this.state.duration !== ""
+        );
+    }
+
+    private onClick = (): void => {
+        const beginDate = new Date(this.state.beginAt.trim());
+        const beginAt = beginDate.getTime();
+
+        if (Number.isNaN(beginAt)) {
+            alert("「开始播放时间」非法：" + JSON.stringify(this.state.beginAt));
+            return;
+        }
+        const duration = Math.ceil(parseFloat(this.state.duration) * 1000);
+
+        if (Number.isNaN(duration) || duration <= 0) {
+            alert("「播放持续时间」非法：" + JSON.stringify(this.state.duration));
+        }
+        const query = stringify({beginAt, duration});
+
+        // 跳转到该房间
+        this.setState({redirectToPath: `/replay/${this.state.roomUUID}?${query}`});
+    }
+
+    public render(): React.ReactNode {
+        if (this.state.redirectToPath) {
+            return <Redirect to={this.state.redirectToPath}/>
+        }
+        return (
+            <div className="bar">
+                <label>回放房间</label>
+                <button disabled={this.props.isLoading || !this.didInputAll()}
+                        onClick={this.onClick}>
+                    播放
+                </button>
+                <div>
+                    <input disabled={this.props.isLoading}
+                           placeholder="请输入房间 uuid"
+                           value={this.state.roomUUID}
+                           onChange={event => this.setState({roomUUID: event.target.value})}/>
+                </div>
+                <div>
+                    <input disabled={this.props.isLoading}
+                           placeholder="请输入开始播放时间（形如 2019-02-22 15:36:42）"
+                           value={this.state.beginAt}
+                           onChange={event => this.setState({beginAt: event.target.value})}/>
+                </div>
+                <div>
+                    <input disabled={this.props.isLoading}
+                           placeholder="请输入播放持续时间（秒）"
+                           value={this.state.duration}
+                           onChange={event => this.setState({duration: event.target.value})}/>
                 </div>
             </div>
         );

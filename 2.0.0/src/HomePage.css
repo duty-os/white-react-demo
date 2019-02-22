@@ -5,3 +5,7 @@
 .home-page .bar label {
     margin-right: 24px;
 }
+
+.home-page .bar input {
+    width: 360px;
+}

@@ -36,7 +36,7 @@ export class SlicePage extends React.Component<SlicePageProps, SlicePageState> {
     }
 
     private async replaySlice(): Promise<void> {
-        const player = await this.whiteWebSdk.replayRoom({sliceUUID: this.uuid}, {
+        const player = await this.whiteWebSdk.replayRoom({slice: this.uuid}, {
             onLoadFirstFrame: () => {},
             onScheduleTimeChanged: timestamp => {},
         });
