@@ -4,7 +4,7 @@ import * as React from "react";
 
 import {RouteComponentProps} from "react-router";
 import {parse} from "query-string";
-import {Room, RoomPhase, RoomWhiteboard, WhiteWebSdk} from "white-react-sdk";
+import {Room, RoomPhase, WhiteWebSdk} from "white-react-sdk";
 import {ApplianceBar} from "./ApplianceBar";
 
 export type RoomPageProps = RouteComponentProps<{
@@ -37,10 +37,12 @@ export class RoomPage extends React.Component<RoomPageProps, RoomPageState> {
 
     public componentWillMount(): void {
         window.addEventListener("resize", this.refreshRoomViewSize);
-        this.joinRoom().catch(error => {
-            console.error(error);
-            alert(error.message);
-        });
+        for(let i=0; i<1; i++) {
+            this.joinRoom().catch(error => {
+                console.error(error);
+                // alert(error.message);
+            });
+        }
     }
 
     public componentWillUnmount(): void {
@@ -51,7 +53,7 @@ export class RoomPage extends React.Component<RoomPageProps, RoomPageState> {
         // 该方法应该在前端调用
         // 调用次方法前，应该从业务服务器获取房间 uuid 和 roomToken
         // 进入房间成功后，会获取 room 对象
-        const room = await this.whiteWebSdk.joinRoom({
+        await this.whiteWebSdk.joinRoom({
             uuid: this.uuid,
             roomToken: this.token,
         }, {
@@ -64,10 +66,10 @@ export class RoomPage extends React.Component<RoomPageProps, RoomPageState> {
         });
         console.log(`join room "${this.uuid}" successfully`);
 
-        this.setState({
-            room: room,
-            appliance: room.state.memberState.currentApplianceName,
-        });
+        // this.setState({
+        //     room: room,
+        //     appliance: room.state.memberState.currentApplianceName,
+        // });
     }
 
     public render(): React.ReactNode {
@@ -144,7 +146,7 @@ export class RoomPage extends React.Component<RoomPageProps, RoomPageState> {
         }
         return (
             <div className="whiteboard-container">
-                <RoomWhiteboard className="whiteboard" room={room}/>
+                {/* <RoomWhiteboard className="whiteboard" room={room}/> */}
             </div>
         );
     }
