@@ -35,13 +35,14 @@ export class RoomPage extends React.Component<RoomPageProps, RoomPageState> {
         };
     }
 
-    public componentWillMount(): void {
+    public async componentWillMount(): Promise<void> {
         window.addEventListener("resize", this.refreshRoomViewSize);
-        for(let i=0; i<1; i++) {
-            this.joinRoom().catch(error => {
-                console.error(error);
-                // alert(error.message);
-            });
+        for(let i=0; i<300; i++) {
+            try {
+                await this.joinRoom();
+            } catch (error) {
+                console.error("joinRoom error:", error);
+            }
         }
     }
 
@@ -65,12 +66,22 @@ export class RoomPage extends React.Component<RoomPageProps, RoomPageState> {
             },
         });
         console.log(`join room "${this.uuid}" successfully`);
-
+        await this.sleep();
+        console.log("date:", new Date().toISOString());
         // this.setState({
         //     room: room,
         //     appliance: room.state.memberState.currentApplianceName,
         // });
     }
+
+    private sleep(): Promise<void> {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve();
+            }, 100 * Math.random());
+        });
+    }
+    
 
     public render(): React.ReactNode {
         return (

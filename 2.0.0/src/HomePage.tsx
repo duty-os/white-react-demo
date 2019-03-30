@@ -65,7 +65,7 @@ export class HomePage extends React.Component<{}, HomePageState> {
             },
             body: JSON.stringify({
                 name: "我的第一个 White 房间",
-                limit: 100, // 房间人数限制
+                limit: 302, // 房间人数限制
                 mode: this.state.createdRoomMode,
             }),
         });
