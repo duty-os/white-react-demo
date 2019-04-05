@@ -62,8 +62,8 @@ export class RoomPage extends React.Component<RoomPageProps, RoomPageState> {
                 }
             },
         });
-        console.log(`join room "${this.uuid}" successfully`);
-
+        console.log(`join room "${this.uuid}" successfully `);
+        (window as any).room = room;
         this.setState({
             room: room,
             appliance: room.state.memberState.currentApplianceName,
