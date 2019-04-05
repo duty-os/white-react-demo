@@ -98,6 +98,7 @@ export class App extends React.Component<{}, AppState> {
             roomToken: roomToken,
         });
         console.log(`join room "${uuid}" successfully`);
+        (window as any).room = room;
 
         this.setState({
             room: room,
