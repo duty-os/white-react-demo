@@ -8797,12 +8797,12 @@ white-react-sdk@1.3.7:
   dependencies:
     white-web-sdk "1.3.7"
 
-white-react-sdk@2.0.0-beta.6:
-  version "2.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/white-react-sdk/-/white-react-sdk-2.0.0-beta.6.tgz#2ceaf5d477b724430f190cbc219caf275e785e51"
-  integrity sha512-9HAtIw56hcUno689nc2kVDcnqjSJS22Vm3EahYoBhyHscgMdu6XPnoL3W4KXYQIyr99pSh6OfQD+bGd0sIacwA==
+white-react-sdk@2.0.0-beta.7:
+  version "2.0.0-beta.7"
+  resolved "https://registry.yarnpkg.com/white-react-sdk/-/white-react-sdk-2.0.0-beta.7.tgz#69ed9e14eaeaf3a4e0cc4ebcbfb1425b56b968b6"
+  integrity sha512-6Pwf+zwvo/MHzePxKu8KjxM0a8OsjEu5gKr9Ix2vqjFTOp4Qtj6NqRnvHXevVx5oJkSI/KmI/wWGHVzA/PWiHw==
   dependencies:
-    white-web-sdk "2.0.0-beta.6"
+    white-web-sdk "2.0.0-beta.7"
 
 white-web-sdk@1.3.7:
   version "1.3.7"
@@ -8818,10 +8818,10 @@ white-web-sdk@1.3.7:
     react "^16.3.2"
     react-dom "^16.3.2"
 
-white-web-sdk@2.0.0-beta.6:
-  version "2.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/white-web-sdk/-/white-web-sdk-2.0.0-beta.6.tgz#c0ae77666ffaa9a24933db187ed62cc2a8ee2191"
-  integrity sha512-Mwt7LdsyqqviuJKeS5mhdXgiRkdLbQ6yzHakW/Ftpe5XTqhwt12snfeKjHsgvANiI1jFBN6/KYED7y52lP2Fzw==
+white-web-sdk@2.0.0-beta.7:
+  version "2.0.0-beta.7"
+  resolved "https://registry.yarnpkg.com/white-web-sdk/-/white-web-sdk-2.0.0-beta.7.tgz#5696902651cb8a2ee88580b513b728c4624ceb88"
+  integrity sha512-JLX5Y02Ru4/qrwWpwngAyAw+7v4d03txR6dKFlXbzck1ubqtCqAcIBgI/HLs1u3N6ifDdzxoU7TUGsmTZD9byQ==
   dependencies:
     "@types/node" "^10.3.3"
     "@types/query-string" "5"
