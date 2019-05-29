@@ -44,6 +44,7 @@ export class SlicePage extends React.Component<SlicePageProps, SlicePageState> {
     private async replaySlice(): Promise<void> {
         const player = await this.whiteWebSdk.replayRoom({
             room: this.uuid,
+            roomToken: "TODO",
             beginTimestamp: this.beginAt,
             duration: this.duration,
         }, {
