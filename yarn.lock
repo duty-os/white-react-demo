@@ -1258,6 +1258,11 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
+bezier-js@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/bezier-js/-/bezier-js-2.4.0.tgz#8fb65113e01c7d3e443aa9fd66921478befc24a0"
+  integrity sha512-ttwqGL47RtYOoZy10oFJZ1VlEC6w1eJW1xMPBAvEx57cTWgmaJNr/c2ZLMr/O2RD50saR0OaLBIpgyZ7rkHLSw==
+
 big.js@^3.1.3:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/big.js/-/big.js-3.2.0.tgz#a5fc298b81b9e0dca2e458824784b65c52ba588e"
@@ -3697,6 +3702,13 @@ hoist-non-react-statics@^2.5.0:
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
   integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
 
+hoist-non-react-statics@^3.0.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.0.tgz#b09178f0122184fb95acf525daaecb4d8f45958b"
+  integrity sha512-0XsbTXxgiaCDYDIWFcwkmerZPSwywfUqYmwT4jzewKTQSWoE6FCMoUVOeBJWK3E/CrWbxRG3m5GzY4lnIwGRBA==
+  dependencies:
+    react-is "^16.7.0"
+
 home-or-tmp@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/home-or-tmp/-/home-or-tmp-2.0.0.tgz#e36c3f2d2cae7d746a857e38d18d5f32a7882db8"
@@ -5428,6 +5440,19 @@ mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0.5.1:
   dependencies:
     minimist "0.0.8"
 
+mobx-react@^5.4.3:
+  version "5.4.4"
+  resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-5.4.4.tgz#b3de9c6eabcd0ed8a40036888cb0221ab9568b80"
+  integrity sha512-2mTzpyEjVB/RGk2i6KbcmP4HWcAUFox5ZRCrGvSyz49w20I4C4qql63grPpYrS9E9GKwgydBHQlA4y665LuRCQ==
+  dependencies:
+    hoist-non-react-statics "^3.0.0"
+    react-lifecycles-compat "^3.0.2"
+
+mobx@^4.9.3:
+  version "4.9.4"
+  resolved "https://registry.yarnpkg.com/mobx/-/mobx-4.9.4.tgz#bb37a0e4e05f0b02be89ced9d23445cad73377ad"
+  integrity sha512-RaEpydw7D1ebp1pdFHrEMZcLk4nALAZyHAroCPQpqLzuIXIxJpLmMIe5PUZwYHqvlcWL6DVqDYCANZpPOi9iXA==
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -6659,6 +6684,11 @@ querystringify@^2.0.0:
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.0.0.tgz#fa3ed6e68eb15159457c89b37bc6472833195755"
   integrity sha512-eTPo5t/4bgaMNZxyjWx6N2a6AuE0mq51KWvpc7nU/MAqixcI6v6KrGUKES0HaomdnolQBBXU/++X6/QQ9KL4tw==
 
+querystringify@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.1.tgz#60e5a5fd64a7f8bfa4d2ab2ed6fdf4c85bad154e"
+  integrity sha512-w7fLxIRCRT7U8Qu53jQnJyPkYZIaR4n5151KMfcJlO/A9397Wxb1amJvROTK6TOnp7PfoAmg/qXiNHI+08jRfA==
+
 raf@3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/raf/-/raf-3.4.0.tgz#a28876881b4bc2ca9117d4138163ddb80f781575"
@@ -6739,16 +6769,6 @@ react-dev-utils@^5.0.1:
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
-react-dom@>=16.3.3:
-  version "16.8.1"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.1.tgz#ec860f98853d09d39bafd3a6f1e12389d283dbb4"
-  integrity sha512-N74IZUrPt6UiDjXaO7UbDDFXeUXnVhZzeRLy/6iqqN1ipfjrhR60Bp5NuBK+rv3GMdqdIuwIl22u1SYwf330bg==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.2"
-    scheduler "^0.13.1"
-
 react-dom@^16.3.2:
   version "16.4.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.2.tgz#4afed569689f2c561d2b8da0b819669c38a0bda4"
@@ -6759,15 +6779,35 @@ react-dom@^16.3.2:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
+react-dom@^16.8.4:
+  version "16.8.6"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.6.tgz#71d6303f631e8b0097f56165ef608f051ff6e10f"
+  integrity sha512-1nL7PIq9LTL3fthPqwkvr2zY7phIPjYrT0jp4HjyEQrEROnw4dG41VVwi/wfoCneoleqrNX7iAD+pXebJZwrwA==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    scheduler "^0.13.6"
+
 react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
   integrity sha512-FlsPxavEyMuR6TjVbSSywovXSEyOg6ZDj5+Z8nbsRl9EkOzAhEIcS+GLoQDC5fz/t9suhUXWmUrOBrgeUvrMxw==
 
+react-is@^16.7.0:
+  version "16.8.6"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
+  integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
+
 react-is@^16.8.1:
   version "16.8.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.1.tgz#a80141e246eb894824fb4f2901c0c50ef31d4cdb"
   integrity sha512-ioMCzVDWvCvKD8eeT+iukyWrBGrA3DiFYkXfBsVYIRdaREZuBjENG+KjrikavCLasozqRWTwFUagU/O4vPpRMA==
+
+react-lifecycles-compat@^3.0.2:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+  integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
 react-router-dom@^4.2.2:
   version "4.3.1"
@@ -6848,6 +6888,16 @@ react@^16.3.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
+
+react@^16.8.4:
+  version "16.8.6"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.8.6.tgz#ad6c3a9614fd3a4e9ef51117f54d888da01f2bbe"
+  integrity sha512-pC0uMkhLaHm11ZSJULfOBqV4tIZkx87ZLvbbQYunNixAAvjnC+snJCg0XQXn9VIsttVsbZP/H/ewzgsd5fxKXw==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    scheduler "^0.13.6"
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
@@ -7310,10 +7360,10 @@ sax@^1.2.4, sax@~1.2.1:
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
 
-scheduler@^0.13.1:
-  version "0.13.1"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.13.1.tgz#1a217df1bfaabaf4f1b92a9127d5d732d85a9591"
-  integrity sha512-VJKOkiKIN2/6NOoexuypwSrybx13MY7NSy9RNt8wPvZDMRT1CW6qlpF5jXRToXNHz3uWzbm2elNpZfXfGPqP9A==
+scheduler@^0.13.6:
+  version "0.13.6"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.13.6.tgz#466a4ec332467b31a91b9bf74e5347072e4cd889"
+  integrity sha512-IWnObHt413ucAYKsD9J1QShUKkbKLQQHdxRyw73sw4FN26iWr3DY/H34xGPe4nmL1DwXyWmSWmMrA9TfQbE/XQ==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
@@ -8444,6 +8494,14 @@ url-parse@^1.1.8, url-parse@^1.4.3:
     querystringify "^2.0.0"
     requires-port "^1.0.0"
 
+url-parse@^1.4.6:
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.4.7.tgz#a8a83535e8c00a316e403a5db4ac1b9b853ae278"
+  integrity sha512-d3uaVyzDB9tQoSXFvuSUNFibTd9zxd2bkVrDRvF5TmvWWQwqE4lgYJ5m+x1DbecWkw+LK4RNl2CU1hHuOKPVlg==
+  dependencies:
+    querystringify "^2.1.1"
+    requires-port "^1.0.0"
+
 url-toolkit@^2.1.1, url-toolkit@^2.1.3:
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/url-toolkit/-/url-toolkit-2.1.6.tgz#6d03246499e519aad224c44044a4ae20544154f2"
@@ -8797,12 +8855,14 @@ white-react-sdk@1.3.7:
   dependencies:
     white-web-sdk "1.3.7"
 
-white-react-sdk@2.0.0-beta.7:
-  version "2.0.0-beta.7"
-  resolved "https://registry.yarnpkg.com/white-react-sdk/-/white-react-sdk-2.0.0-beta.7.tgz#69ed9e14eaeaf3a4e0cc4ebcbfb1425b56b968b6"
-  integrity sha512-6Pwf+zwvo/MHzePxKu8KjxM0a8OsjEu5gKr9Ix2vqjFTOp4Qtj6NqRnvHXevVx5oJkSI/KmI/wWGHVzA/PWiHw==
+white-react-sdk@2.0.0-beta.13:
+  version "2.0.0-beta.13"
+  resolved "https://registry.yarnpkg.com/white-react-sdk/-/white-react-sdk-2.0.0-beta.13.tgz#b673d8bea821c83c53d0779adeeeb5a41d9d168f"
+  integrity sha512-uS1yR5lZoD/0ZNCmKelFpJ6TiiOhjc57Js9Thf6gCft+JgwrO2TK0Kg0vcY4TjNWAVptHxzyuBi06cwit9K0WQ==
   dependencies:
-    white-web-sdk "2.0.0-beta.7"
+    react "^16.8.4"
+    react-dom "^16.8.4"
+    white-web-sdk "2.0.0-beta.13"
 
 white-web-sdk@1.3.7:
   version "1.3.7"
@@ -8818,22 +8878,22 @@ white-web-sdk@1.3.7:
     react "^16.3.2"
     react-dom "^16.3.2"
 
-white-web-sdk@2.0.0-beta.7:
-  version "2.0.0-beta.7"
-  resolved "https://registry.yarnpkg.com/white-web-sdk/-/white-web-sdk-2.0.0-beta.7.tgz#5696902651cb8a2ee88580b513b728c4624ceb88"
-  integrity sha512-JLX5Y02Ru4/qrwWpwngAyAw+7v4d03txR6dKFlXbzck1ubqtCqAcIBgI/HLs1u3N6ifDdzxoU7TUGsmTZD9byQ==
+white-web-sdk@2.0.0-beta.13:
+  version "2.0.0-beta.13"
+  resolved "https://registry.yarnpkg.com/white-web-sdk/-/white-web-sdk-2.0.0-beta.13.tgz#15f0c7540dbcc97f13464de52681fe02d2e92aa8"
+  integrity sha512-ydjRSauluM1Afscp7WuBmK3E9fzX5AGDKS3g3UYOF4i+/zDoP6HhlZXB1Bw6ejiItiaSnuv4r/jqgUjOJlEc0w==
   dependencies:
-    "@types/node" "^10.3.3"
-    "@types/query-string" "5"
-    "@types/react" "^16.4.12"
-    "@types/react-dom" "^16.0.5"
-    csstype "^2.5.6"
+    bezier-js "^2.4.0"
+    mobx "^4.9.3"
+    mobx-react "^5.4.3"
     query-string "5"
-    react "^16.3.2"
-    react-dom ">=16.3.3"
+    react "^16.8.4"
+    react-dom "^16.8.4"
     spark-md5 "^3.0.0"
+    url-parse "^1.4.6"
     uuid "^3.3.2"
     video.js "^7.4.1"
+    xml-js "^1.6.11"
 
 wide-align@^1.1.0:
   version "1.1.3"
@@ -8919,6 +8979,13 @@ xhr@2.4.0:
     is-function "^1.0.1"
     parse-headers "^2.0.0"
     xtend "^4.0.0"
+
+xml-js@^1.6.11:
+  version "1.6.11"
+  resolved "https://registry.yarnpkg.com/xml-js/-/xml-js-1.6.11.tgz#927d2f6947f7f1c19a316dd8eea3614e8b18f8e9"
+  integrity sha512-7rVi2KMfwfWFl+GpPg6m80IVMWXLRjO+PxTq7V2CDhoGak0wzYzFgUY2m4XJ47OGdXd8eLE8EmwfAmdjw7lC1g==
+  dependencies:
+    sax "^1.2.4"
 
 xml-name-validator@^3.0.0:
   version "3.0.0"
