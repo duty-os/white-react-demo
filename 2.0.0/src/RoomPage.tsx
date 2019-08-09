@@ -4,7 +4,7 @@ import * as React from "react";
 
 import {RouteComponentProps} from "react-router";
 import {parse} from "query-string";
-import {Room, RoomPhase, RoomWhiteboard, WhiteWebSdk} from "white-react-sdk";
+import {Room, RoomPhase, RoomWhiteboard, WhiteWebSdk, ViewMode} from "white-react-sdk";
 import {ApplianceBar} from "./ApplianceBar";
 
 export type RoomPageProps = RouteComponentProps<{
@@ -62,6 +62,22 @@ export class RoomPage extends React.Component<RoomPageProps, RoomPageState> {
                 }
             },
         });
+        room.addMagixEventListener("a", event => {
+            console.log(event);
+            if (event.authorId !== room.observerId) {
+                room.dispatchMagixEvent("b", {q: "q"});
+            }
+        })
+        room.addMagixEventListener("b", async event => {
+            console.log(event);
+            if (event.authorId !== room.observerId) {
+                console.log("quit");
+                alert("请勿重新登录")
+                await room.disconnect();
+                room.bindHtmlElement(null);
+            }
+        })
+        room.dispatchMagixEvent("a", {id: 1});
         console.log(`join room "${this.uuid}" successfully `);
         (window as any).room = room;
         this.setState({
