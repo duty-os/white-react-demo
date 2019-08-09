@@ -51,6 +51,7 @@ export class SlicePage extends React.Component<SlicePageProps, SlicePageState> {
             onLoadFirstFrame: () => {},
             onScheduleTimeChanged: timestamp => {},
         });
+        (window as any).player = player;
         player.seekToScheduleTime(0);
         player.play();
 
