@@ -1,9 +1,8 @@
 # white web sdk
 
-[![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/herewhite/white-stack)
+This project is no longer maintained. please see https://github.com/netless-io/whiteboard-demo 
+该项目已经不再维护，请查看 https://github.com/netless-io/whiteboard-demo 
 
-- [官网](https://www.herewhite.com)
-- [官方产品](https://app.herewhite.com)
 
 ## 快速启动
 
